@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.4.0
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - bundle exec rake db:create db:schema:load
+script:
+  - bundle exec rspec
